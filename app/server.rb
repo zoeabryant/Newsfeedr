@@ -1,4 +1,5 @@
 require 'sinatra'
+require './lib/rss_handler'
 
 require_relative 'controllers/application'
 
