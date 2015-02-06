@@ -18,7 +18,8 @@ class RSSHandler
   end
 
   def extract_data
-    @parsed_data.items.each do |item|
+    @parsed_data.items.each_with_index do |item, index|
+      break if index >= 5
       story = Story.new(format_data(item))
       @extracted_data << story
     end

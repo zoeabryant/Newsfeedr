@@ -1,20 +1,33 @@
-<h1>Newsfeedr</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Newsfeedr</title>
+</head>
+<body>
 
-<% if !@news %>
+  <h1>Newsfeedr</h1>
 
-  <h2>No news found</h2>
+  <% if !session[:news] %>
 
-<% else %>
+    <h2>No news found</h2>
 
-  <% @news.each do |story| %>
-    <article>
-      <a href="<%= story.link %>">
-        <h2><%= story.title %></h2>
-      </a>
-      <em><%= story.pubDate %></em>
-      <strong><%= story.votes %> votes</strong>
-      <p><%= story.description %></p>
-    </article>
+  <% else %>
+
+    <% session[:news].each do |story| %>
+      <article>
+        <a href="<%= story.link %>">
+          <h2><%= story.title %></h2>
+        </a>
+        <em><%= story.pubDate %></em>
+        <strong><%= story.votes %> votes</strong>
+        <a href="vote/story/<%= story.title %>">
+          vote!
+        </a>
+        <p><%= story.description %></p>
+      </article>
+    <% end %>
+
   <% end %>
 
-<% end %>
+</body>
+</html>
