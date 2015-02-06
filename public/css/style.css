@@ -1,0 +1,25 @@
+body {
+  font-family: sans-serif;
+}
+
+.wrapper {
+  width: 95%;
+  max-width: 700px;
+  margin: 0px auto
+}
+
+a {
+  color: #3399CC;
+  text-decoration: none;
+}
+a:hover {
+  color: #339999;
+  text-decoration: underline;
+}
+a:visited{
+  color: #339999;
+}
+
+article {
+  padding: 5px 0px;
+}
