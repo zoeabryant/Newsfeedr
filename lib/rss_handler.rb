@@ -1,5 +1,5 @@
 require "rss"
-require 'open-uri'
+require_relative "story"
 
 class RSSHandler
 
@@ -19,7 +19,7 @@ class RSSHandler
 
   def extract_data
     @parsed_data.items.each do |item|
-      story = format_data(item)
+      story = Story.new(format_data(item))
       @extracted_data << story
     end
   end

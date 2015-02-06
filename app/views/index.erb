@@ -1,11 +1,20 @@
 <h1>Newsfeedr</h1>
 
-<% @news.each do |story| %>
-  <article>
-    <a href="<%= story[:link] %>">
-      <h2><%= story[:title] %></h2>
-    </a>
-    <em><%= story[:pubDate] %></em>
-    <p><%= story[:description] %></p>
-  </article>
+<% if !@news %>
+
+  <h2>No news found</h2>
+
+<% else %>
+
+  <% @news.each do |story| %>
+    <article>
+      <a href="<%= story.link %>">
+        <h2><%= story.title %></h2>
+      </a>
+      <em><%= story.pubDate %></em>
+      <strong><%= story.votes %> votes</strong>
+      <p><%= story.description %></p>
+    </article>
+  <% end %>
+
 <% end %>

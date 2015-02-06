@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'sinatra'
+gem 'sinatra', git: 'https://github.com/sinatra/sinatra.git'
 
 group :development, :test do
   gem 'capybara'
