@@ -2,12 +2,12 @@ require 'spec_helper'
 
 feature "User browses the list of news" do
 
-  scenario "when opening the home page" do
+  xscenario "when opening the home page" do
     visit '/'
     expect(page).to have_content("Newsfeedr")
   end
 
-  scenario "it lists the current news" do
+  xscenario "it lists the current news" do
 
     title = "Old St station is taken over by pigeon overlords"
     link = "http://google.com"
